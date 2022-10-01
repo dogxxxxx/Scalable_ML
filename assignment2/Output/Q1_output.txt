@@ -1,0 +1,85 @@
+Conda uses environments to load different sets of Python packages
+type conda env list to see the environments availible.
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+22/05/09 19:47:10 INFO SparkContext: Running Spark version 3.2.1
+22/05/09 19:47:11 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+22/05/09 19:47:11 WARN SparkConf: Note that spark.local.dir will be overridden by the value set by the cluster manager (via SPARK_LOCAL_DIRS in mesos/standalone/kubernetes and LOCAL_DIRS in YARN).
+22/05/09 19:47:11 INFO ResourceUtils: ==============================================================
+22/05/09 19:47:11 INFO ResourceUtils: No custom resources configured for spark.driver.
+22/05/09 19:47:11 INFO ResourceUtils: ==============================================================
+22/05/09 19:47:11 INFO SparkContext: Submitted application: Q1
+22/05/09 19:47:11 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+22/05/09 19:47:11 INFO ResourceProfile: Limiting resource is cpu
+22/05/09 19:47:11 INFO ResourceProfileManager: Added ResourceProfile id: 0
+22/05/09 19:47:11 INFO SecurityManager: Changing view acls to: acp21kc
+22/05/09 19:47:11 INFO SecurityManager: Changing modify acls to: acp21kc
+22/05/09 19:47:11 INFO SecurityManager: Changing view acls groups to: 
+22/05/09 19:47:11 INFO SecurityManager: Changing modify acls groups to: 
+22/05/09 19:47:11 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(acp21kc); groups with view permissions: Set(); users  with modify permissions: Set(acp21kc); groups with modify permissions: Set()
+22/05/09 19:47:12 INFO Utils: Successfully started service 'sparkDriver' on port 38359.
+22/05/09 19:47:12 INFO SparkEnv: Registering MapOutputTracker
+22/05/09 19:47:12 INFO SparkEnv: Registering BlockManagerMaster
+22/05/09 19:47:12 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+22/05/09 19:47:12 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+22/05/09 19:47:12 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+22/05/09 19:47:12 INFO DiskBlockManager: Created local directory at /mnt/fastdata/acp21kc/blockmgr-e236b955-04e6-479a-b8fa-03f30f512568
+22/05/09 19:47:12 INFO MemoryStore: MemoryStore started with capacity 4.1 GiB
+22/05/09 19:47:12 INFO SparkEnv: Registering OutputCommitCoordinator
+22/05/09 19:47:13 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+22/05/09 19:47:13 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://sharc-node081.shef.ac.uk:4040
+22/05/09 19:47:14 INFO Executor: Starting executor ID driver on host sharc-node081.shef.ac.uk
+22/05/09 19:47:14 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 38701.
+22/05/09 19:47:14 INFO NettyBlockTransferService: Server created on sharc-node081.shef.ac.uk:38701
+22/05/09 19:47:14 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+22/05/09 19:47:14 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, sharc-node081.shef.ac.uk, 38701, None)
+22/05/09 19:47:14 INFO BlockManagerMasterEndpoint: Registering block manager sharc-node081.shef.ac.uk:38701 with 4.1 GiB RAM, BlockManagerId(driver, sharc-node081.shef.ac.uk, 38701, None)
+22/05/09 19:47:14 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, sharc-node081.shef.ac.uk, 38701, None)
+22/05/09 19:47:14 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, sharc-node081.shef.ac.uk, 38701, None)
+/home/acp21kc/.conda/envs/myspark/lib/python3.6/site-packages/pyspark/python/lib/pyspark.zip/pyspark/context.py:238: FutureWarning: Python 3.6 support is deprecated in Spark 3.2.
+  FutureWarning
+22/05/09 19:47:16 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+22/05/09 19:47:16 INFO SharedState: Warehouse path is 'file:/data/acp21kc/ScalableML/Assignment2/HPC/spark-warehouse'.
+/home/acp21kc/.conda/envs/myspark/lib/python3.6/site-packages/pyspark/python/lib/pyspark.zip/pyspark/sql/column.py:326: FutureWarning: A column as 'key' in getItem is deprecated as of Spark 3.0, and will not be supported in the future release. Use `column[key]` or `column.key` syntax instead.
+Q1A:
++-----------+----------+----------+
+|day_of_week|max(count)|min(count)|
++-----------+----------+----------+
+|          1|     60265|     35272|
+|          2|     89584|     64259|
+|          3|     80407|     62699|
+|          4|     94575|     58849|
+|          5|    134203|     61680|
+|          6|     87233|     27121|
+|          7|     64714|     35267|
++-----------+----------+----------+
+
+Q1C:
++----------------------------+-----+
+|name                        |count|
++----------------------------+-----+
+|woodpecker.mpg              |3186 |
+|crew-arrival-t38.mpg        |2597 |
+|sts-71-launch.mpg           |1983 |
+|sts-71-launch-3.mpg         |1918 |
+|sts-71-tcdt-crew-walkout.mpg|1759 |
+|sts-71-mir-dock.mpg         |1564 |
+|sts-70-launch.mpg           |1563 |
+|apo13damage.mpg             |1558 |
+|sts-71-mir-dock-2.mpg       |996  |
+|sts-70-launch-srbsep.mpg    |983  |
+|apo13launch.mpg             |709  |
+|sts-53-launch.mpg           |658  |
+|95072712_48.mpg             |1    |
+|movies.mpg                  |1    |
+|sts-71launch.mpg            |1    |
+|95072720.mpg                |1    |
+|sts-70-landing-approach.mpg |1    |
+|sts-71-s-5-i3.mpg           |1    |
+|sts-71-s-5-i4.mpg           |1    |
+|sts-70-launch-big.mpg       |1    |
+|sts-71-s-5-i2.mpg           |1    |
+|sts-71-s-5-i.mpg            |2    |
+|apo13lanch.mpg              |2    |
+|hub4.mpg                    |2    |
++----------------------------+-----+
+

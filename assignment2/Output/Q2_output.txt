@@ -1,0 +1,60 @@
+Conda uses environments to load different sets of Python packages
+type conda env list to see the environments availible.
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+22/05/11 18:01:55 INFO SparkContext: Running Spark version 3.2.1
+22/05/11 18:01:56 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+22/05/11 18:01:56 WARN SparkConf: Note that spark.local.dir will be overridden by the value set by the cluster manager (via SPARK_LOCAL_DIRS in mesos/standalone/kubernetes and LOCAL_DIRS in YARN).
+22/05/11 18:01:57 INFO ResourceUtils: ==============================================================
+22/05/11 18:01:57 INFO ResourceUtils: No custom resources configured for spark.driver.
+22/05/11 18:01:57 INFO ResourceUtils: ==============================================================
+22/05/11 18:01:57 INFO SparkContext: Submitted application: Q2
+22/05/11 18:01:57 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+22/05/11 18:01:57 INFO ResourceProfile: Limiting resource is cpu
+22/05/11 18:01:57 INFO ResourceProfileManager: Added ResourceProfile id: 0
+22/05/11 18:01:57 INFO SecurityManager: Changing view acls to: acp21kc
+22/05/11 18:01:57 INFO SecurityManager: Changing modify acls to: acp21kc
+22/05/11 18:01:57 INFO SecurityManager: Changing view acls groups to: 
+22/05/11 18:01:57 INFO SecurityManager: Changing modify acls groups to: 
+22/05/11 18:01:57 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(acp21kc); groups with view permissions: Set(); users  with modify permissions: Set(acp21kc); groups with modify permissions: Set()
+22/05/11 18:01:59 INFO Utils: Successfully started service 'sparkDriver' on port 40008.
+22/05/11 18:01:59 INFO SparkEnv: Registering MapOutputTracker
+22/05/11 18:01:59 INFO SparkEnv: Registering BlockManagerMaster
+22/05/11 18:01:59 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+22/05/11 18:01:59 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+22/05/11 18:01:59 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+22/05/11 18:01:59 INFO DiskBlockManager: Created local directory at /mnt/fastdata/acp21kc/blockmgr-f9a14957-e7a3-4eaa-8cc6-463f7e5849dd
+22/05/11 18:01:59 INFO MemoryStore: MemoryStore started with capacity 4.1 GiB
+22/05/11 18:01:59 INFO SparkEnv: Registering OutputCommitCoordinator
+22/05/11 18:02:01 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+22/05/11 18:02:01 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://sharc-node148.shef.ac.uk:4040
+22/05/11 18:02:01 INFO Executor: Starting executor ID driver on host sharc-node148.shef.ac.uk
+22/05/11 18:02:01 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 32997.
+22/05/11 18:02:01 INFO NettyBlockTransferService: Server created on sharc-node148.shef.ac.uk:32997
+22/05/11 18:02:01 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+22/05/11 18:02:01 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, sharc-node148.shef.ac.uk, 32997, None)
+22/05/11 18:02:01 INFO BlockManagerMasterEndpoint: Registering block manager sharc-node148.shef.ac.uk:32997 with 4.1 GiB RAM, BlockManagerId(driver, sharc-node148.shef.ac.uk, 32997, None)
+22/05/11 18:02:01 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, sharc-node148.shef.ac.uk, 32997, None)
+22/05/11 18:02:01 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, sharc-node148.shef.ac.uk, 32997, None)
+/home/acp21kc/.conda/envs/myspark/lib/python3.6/site-packages/pyspark/python/lib/pyspark.zip/pyspark/context.py:238: FutureWarning: Python 3.6 support is deprecated in Spark 3.2.
+  FutureWarning
+22/05/11 18:02:04 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+22/05/11 18:02:04 INFO SharedState: Warehouse path is 'file:/data/acp21kc/ScalableML/Assignment2/HPC/spark-warehouse'.
+/home/acp21kc/.conda/envs/myspark/lib/python3.6/site-packages/pyspark/python/lib/pyspark.zip/pyspark/sql/context.py:127: FutureWarning: Deprecated in 3.0.0. Use SparkSession.builder.getOrCreate() instead.
+Q2 A:
++------------------+--------------------+--------------------+--------------------+--------------------+--------------------+
+|       RMSE       |    first split     |    second split    |    third split     |    fourth split    |    fifth split     |
++------------------+--------------------+--------------------+--------------------+--------------------+--------------------+
+| 1st version hot  | 0.7835264869767394 | 0.7836086956479553 | 0.7837433485123058 | 0.7839144512008289 | 0.7843874475289077 |
+| 1st version cool | 0.914239854582672  | 0.9240423444842235 | 0.9252781994237642 | 0.9265180736063837 | 0.9230987403577174 |
+| 2nd version hot  | 0.8303887443849565 | 0.8308652153482804 | 0.8305490519479125 | 0.8307885134382381 | 0.8310875729393151 |
+| 2nd version cool | 0.9529897827389242 | 0.9642962373009972 | 0.9654630607319233 | 0.9648150167918094 | 0.9629509756014611 |
++------------------+--------------------+--------------------+--------------------+--------------------+--------------------+
+Q2 B:
++-------------------------+---------------+--------------------+--------------+-------------------+------------------+
+|           tags          |  first split  |    second split    | third split  |    fourth split   |   fifth split    |
++-------------------------+---------------+--------------------+--------------+-------------------+------------------+
+|   first group top tag   |     sci-fi    |       sci-fi       | twist ending |    twist ending   |      sci-fi      |
+|   second group top tag  |    surreal    |    atmospheric     |    sci-fi    |       sci-fi      |      action      |
+|  first group bottom tag |       s       | Ludovic Berthillot | Marc Blucas  |         s         |        s         |
+| second group bottom tag | Sayed Badreya |     Geoff Bell     |      s       | Michelle Williams | Mahesh Manjrekar |
++-------------------------+---------------+--------------------+--------------+-------------------+------------------+
